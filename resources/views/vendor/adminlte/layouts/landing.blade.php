@@ -10,7 +10,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <style>
 
         body {
-            background-image: url("http://192.168.3.50:80/images/pndwbg.png");
+            background-image: url("https://pnd-beta.herokuapp.com/images/pndwbg.png");
             background-color: #cccccc;
             background-repeat: no-repeat;
             background-attachment: fixed;
