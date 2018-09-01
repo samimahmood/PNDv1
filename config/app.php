@@ -166,6 +166,9 @@ return [
         Acacha\AdminLTETemplateLaravel\Providers\AdminLTETemplateServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
 
+        Spatie\Menu\Laravel\MenuServiceProvider::class,
+
+
 
         /*
          * Acacha Llum Service Providers...
@@ -239,6 +242,11 @@ return [
         'AdminLTE' => Acacha\AdminLTETemplateLaravel\Facades\AdminLTE::class,
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+
+        'Menu' => Spatie\Menu\Laravel\Facades\Menu::class,
+
+
+
 
 
         /*
