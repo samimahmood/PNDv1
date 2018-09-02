@@ -94,7 +94,7 @@ class VendorProfileController extends Controller
 
         if ($file = $request->file('image'))
         {
-            $name = time() . $file->getClientOriginalName();
+            $name = $file->getClientOriginalName();
 
             $file->move('images' , $name);
 
@@ -105,7 +105,10 @@ class VendorProfileController extends Controller
 
         if ($file = $request->file('banner'))
         {
-            $name = time() . $file->getClientOriginalName();
+//            $name = time() . $file->getClientOriginalName();
+
+            $name = $file->getClientOriginalName();
+
 
             $file->move('images' , $name);
 
