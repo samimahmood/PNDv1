@@ -26,9 +26,9 @@ class VendorResource extends Resource
                 'shortdesc' => "Tap To View Promotions",
 
 
-                'image'=> "http://192.168.144.50:80/images/".$this->image ,
+                'image'=> "https://pnd-beta.herokuapp.com/images/".$this->image ,
 
-                'banner'=> "http://192.168.144.50:80/images/".$this->banner ,
+                'banner'=> "https://pnd-beta.herokuapp.com/images/".$this->banner ,
 
 //                'image' => $this->when($this->imageFile(), function () {
 //                    return "http://192.168.101.50:80/images/".$this->image->file;

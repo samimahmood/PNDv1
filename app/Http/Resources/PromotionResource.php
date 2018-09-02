@@ -24,7 +24,7 @@ class PromotionResource extends Resource
             'vendor'=>$this->user->name,
             'start_date'=>$this->start->diffForHumans(),
             'end_date'=>$this->end->diffForHumans(),
-            'image'=>"http://192.168.144.50:80/images/".$this->image,
+            'image'=>"https://pnd-beta.herokuapp.com/images/".$this->image,
             'category'=>$this->user->category->name,
             'likes' => $this->likes
 

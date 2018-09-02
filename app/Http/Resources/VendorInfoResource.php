@@ -17,7 +17,7 @@ class VendorInfoResource extends Resource
         return [
             'name'=> $this->name ,
             'email'=>$this->email,
-            'image'=>"http://10.0.2.2:8000/images/".$this->image->file,
+            'image'=>"https://pnd-beta.herokuapp.com/images/".$this->image->file,
             'category_id'=>$this->category->name,
 
         ];
