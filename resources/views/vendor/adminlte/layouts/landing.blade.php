@@ -10,28 +10,9 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     <style>
 
 
-        body {
-            height: 100%;
-        }
-
-        body {
-            color: #212226;
-        }
-
-        section {
-            background: #fff;
-            overflow: hidden;
-        }
-
-        #home {
-            background: none;
-            height: 100%;
-        }
-
-
         #home-bg-video {
             position: fixed;
-            top: 70%;
+            top: 50%;
             left: 50%;
             -webkit-transform: translateX(-50%) translateY(-50%);
             transform: translateX(-50%) translateY(-50%);
@@ -56,7 +37,7 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
             width: 100%;
             height: 100%;
             display: table;
-            margin-top: 20%;
+            padding-top: 20%;
         }
 
         #home-content-inner {
