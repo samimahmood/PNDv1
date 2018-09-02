@@ -9,13 +9,105 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
     <style>
 
+
         body {
-            background-image: url("https://pnd-beta.herokuapp.com/images/pndwbg.png");
-            background-color: #cccccc;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
+            height: 100%;
         }
+
+        body {
+            color: #212226;
+        }
+
+        section {
+            background: #fff;
+            overflow: hidden;
+        }
+
+        #home {
+            background: none;
+            height: 100%;
+        }
+
+
+        #home-bg-video {
+            position: fixed;
+            top: 70%;
+            left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            background-size: cover;
+        }
+        #home-overlay {
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        #home-content {
+            width: 100%;
+            height: 100%;
+            display: table;
+            margin-top: 20%;
+        }
+
+        #home-content-inner {
+            display: table-cell;
+            vertical-align: middle;
+        }
+
+        #home-heading h1 {
+            color: #fff;
+            font-size: 65px;
+            font-weight: 100;
+            text-transform: uppercase;
+            margin: 0;
+            display: inline-block;
+        }
+
+        #home-heading h1 span {
+            color: #f4c613;
+            font-weight: 500;
+        }
+
+        #home-text p {
+            color: #fff;
+            font-size: 17px;
+            font-weight: 100;
+            margin: 8px 0 30px 0;
+        }
+
+        .btn-general {
+            font-family: 'Raleway', sans-serif;
+            border-radius: 28px;
+            font-size: 13px;
+            text-transform: uppercase;
+            margin: 0 6px;
+            padding: 12px 46px 12px 46px;
+            -webkit-transition: all .5s;
+            transition: all .5s;
+        }
+
+        .btn-home {
+            color: #fff;
+            border: 1px solid #fff;
+        }
+
+        .btn-home:hover,
+        .btn-home:focus {
+            color: #fff;
+            background-color: #f4c613;
+            border: 1px solid #f4c613;
+        }
+
     </style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,33 +140,80 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
 
 <body data-spy="scroll" data-target="#navigation" data-offset="50">
 
-<div id="app" v-cloak>
-    <!-- Fixed navbar -->
-    <div id="navigation" class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#"><b>Promotion NextDoor</b></a>
+{{--<div id="app" v-cloak>--}}
+{{--<!-- Fixed navbar -->--}}
+{{--<div id="navigation" class="navbar navbar-default navbar-fixed-top">--}}
+{{--<div class="container">--}}
+{{--<div class="navbar-header">--}}
+{{--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">--}}
+{{--<span class="icon-bar"></span>--}}
+{{--<span class="icon-bar"></span>--}}
+{{--<span class="icon-bar"></span>--}}
+{{--</button>--}}
+{{--<a class="navbar-brand" href="#"><b>Promotion NextDoor</b></a>--}}
+{{--</div>--}}
+{{--<div class="navbar-collapse collapse">--}}
+
+{{--<ul class="nav navbar-nav navbar-right">--}}
+{{--@if (Auth::guest())--}}
+{{--<li><a href="{{ url('/login') }}">{{ trans('adminlte_lang::message.login') }}</a></li>--}}
+{{--<li><a href="{{ url('/register') }}">{{ trans('adminlte_lang::message.register') }}</a></li>--}}
+{{--@else--}}
+{{--<li><a href="/home">{{ Auth::user()->name }}</a></li>--}}
+{{--@endif--}}
+{{--</ul>--}}
+{{--</div><!--/.nav-collapse -->--}}
+{{--</div>--}}
+{{--</div>--}}
+{{--</div>--}}
+
+<!-- Home -->
+<section id="home">
+
+    <!-- Background Video -->
+    <video id="home-bg-video" poster="video/solo.jpg" autoplay loop muted>
+        <source src="images/PND-TVC.mp4" type="video/mp4">
+
+        <!--
+                    <source src="video/solo.mp4" type="video/mp4">
+                    <source src="video/solo.ogv" type="video/ogg">
+                    <source src="video/solo.webm" type="video/webm">
+        -->
+    </video>
+
+    <!-- Overlay -->
+    <div id="home-overlay"></div>
+
+    <!-- Home Content -->
+    <div id="home-content">
+
+        <div id="home-content-inner" class="text-center">
+
+            <div id="home-heading">
+                <h1 id="home-heading-1">Promotions</h1><br>
+                <h1 id="home-heading-2"> <span>NextDoor</span></h1>
             </div>
-            <div class="navbar-collapse collapse">
 
-                <ul class="nav navbar-nav navbar-right">
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">{{ trans('adminlte_lang::message.login') }}</a></li>
-                        <li><a href="{{ url('/register') }}">{{ trans('adminlte_lang::message.register') }}</a></li>
-                    @else
-                        <li><a href="/home">{{ Auth::user()->name }}</a></li>
-                    @endif
-                </ul>
-            </div><!--/.nav-collapse -->
+            <div id="home-text">
+                <p>Best Discounts. Anywhere, Anytime.</p>
+            </div>
+
+            <div id="home-btn">
+                <a class="btn btn-general btn-home smooth-scroll" href="/login" title="Start Now" role="button">Login</a>
+                <a class="btn btn-general btn-home smooth-scroll" href="/register" title="Start Now" role="button">Register</a>
+            </div>
+
         </div>
-    </div>
-</div>
 
+    </div>
+
+    <!-- Arrow Down -->
+    <a href="#about" id="arrow-down" class="smooth-scroll">
+        <i class="fa fa-angle-down"></i>
+    </a>
+
+</section>
+<!-- Home Ends -->
 
 
 <!-- Bootstrap core JavaScript
@@ -87,12 +226,12 @@ Landing page based on Pratt: http://blacktie.co/demo/pratt/
     })
 </script>
 
-    {{--<script>--}}
-        {{--$(function() {--}}
-            {{--$( "#calendar1" ).datepicker();--}}
-            {{--$( "#calendar2" ).datepicker();--}}
-        {{--});--}}
-    {{--</script>--}}
+{{--<script>--}}
+{{--$(function() {--}}
+{{--$( "#calendar1" ).datepicker();--}}
+{{--$( "#calendar2" ).datepicker();--}}
+{{--});--}}
+{{--</script>--}}
 
 
 
