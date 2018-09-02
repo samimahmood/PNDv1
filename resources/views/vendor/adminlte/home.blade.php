@@ -26,6 +26,7 @@
 					</div>
 					<div class="box-body">
 						<h1>Welcome {{Auth::user()->name}}</h1>
+						<h4>Please Complete your Profile Before Submitting Promotions</h4>
 
 
 

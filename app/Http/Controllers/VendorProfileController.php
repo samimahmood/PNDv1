@@ -181,48 +181,44 @@ class VendorProfileController extends Controller
     public function VendorsNearbyApi()
     {
 
-        return VendorInfoResource::collection(User::all());
+        $lat =  31.364667;
+        $long = 74.216093;
 
-        
-//
-//        $lat =  31.364667;
-//        $long = 74.216093;
-//
-//
-//        $nearby = DB::select(
-//            "
-//
-//             SELECT
-//             user_id,
-//(
-//   6371 *
-//   acos(cos(radians($lat)) *
-//   cos(radians(lat)) *
-//   cos(radians(lng) -
-//   radians($long)) +
-//   sin(radians($lat)) *
-//   sin(radians(lat )))
-//) AS distance
-//FROM locations
-//HAVING distance < 15
-//ORDER BY distance LIMIT 0, 20;
-//
-//            "
-//        );
-//
-//
-//        $vendor_array = array();
-//
-//        foreach ($nearby as $item)
-//        {
-//            array_push($vendor_array, $item->user_id);
-//
-//
-//        }
-//
-//        $vendor = User::whereIn('id', $vendor_array)->orderBy('name')->get();
-//
-//        return VendorResource::collection($vendor);
+
+        $nearby = DB::select(
+            "
+           
+             SELECT  
+             user_id, 
+(
+   6371 *
+   acos(cos(radians($lat)) * 
+   cos(radians(lat)) * 
+   cos(radians(lng) - 
+   radians($long)) + 
+   sin(radians($lat)) * 
+   sin(radians(lat )))
+) AS distance 
+FROM locations 
+HAVING distance < 15 
+ORDER BY distance LIMIT 0, 20;
+           
+            "
+        );
+
+
+        $vendor_array = array();
+
+        foreach ($nearby as $item)
+        {
+            array_push($vendor_array, $item->user_id);
+
+
+        }
+
+        $vendor = User::whereIn('id', $vendor_array)->orderBy('name')->get();
+
+        return VendorResource::collection($vendor);
 
     }
 
