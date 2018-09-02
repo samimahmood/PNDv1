@@ -130,7 +130,7 @@ class PromotionController extends Controller
 
         if ($file = $request->file('image'))
         {
-            $name = time() . $file->getClientOriginalName();
+            $name = $file->getClientOriginalName();
 
             $file->move('images' , $name);
 
