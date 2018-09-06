@@ -167,8 +167,8 @@ class PromotionController extends Controller
             array(
                 "fcm" => array(
                     "notification" => array(
-                        "title" => "PND",
-                        "body" => "New Promotion From: " . $user,
+                        "title" => "Khaadi is within 2km with exciting offers" ,
+                        "body" => "Tap to view Discounts",
                     ),
                     "data" => array(
                         "myMessagePayload" => "Display me somewhere in the app ui!",
